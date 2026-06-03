@@ -1,0 +1,236 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap");
+
+/* ---------- Base ---------- */
+@layer base {
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px;
+  }
+
+  body {
+    @apply bg-dark text-gray-200 font-sans antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background-color: rgba(30, 144, 255, 0.3);
+    color: #fff;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #0a0a0f;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #1e90ff40;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #1e90ff80;
+  }
+}
+
+/* ---------- Components ---------- */
+@layer components {
+  /* Glassmorphism card */
+  .glass-card {
+    @apply bg-dark-card/60 backdrop-blur-xl border border-dark-border/50 rounded-2xl;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  .glass-card-hover {
+    @apply glass-card transition-all duration-500;
+  }
+
+  .glass-card-hover:hover {
+    @apply border-accent/30;
+    box-shadow: 0 8px 32px rgba(30, 144, 255, 0.1),
+      0 0 0 1px rgba(30, 144, 255, 0.05);
+    transform: translateY(-4px);
+  }
+
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(135deg, #1e90ff, #4da6ff, #87cefa);
+  }
+
+  /* Section styles */
+  .section-container {
+    @apply max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 md:py-28;
+  }
+
+  .section-heading {
+    @apply text-3xl md:text-4xl font-bold mb-4 tracking-tight;
+  }
+
+  .section-subheading {
+    @apply text-gray-400 text-lg max-w-2xl mb-12;
+  }
+
+  /* Glowing dot */
+  .glow-dot {
+    @apply w-3 h-3 rounded-full bg-accent;
+    box-shadow: 0 0 8px rgba(30, 144, 255, 0.6),
+      0 0 16px rgba(30, 144, 255, 0.3);
+  }
+
+  /* Accent line */
+  .accent-line {
+    @apply w-16 h-1 bg-accent rounded-full mb-6;
+  }
+
+  /* Tag / Badge */
+  .tech-tag {
+    @apply px-3 py-1 text-xs font-medium rounded-full bg-accent/10 text-accent border border-accent/20
+           transition-all duration-300;
+  }
+
+  .tech-tag:hover {
+    @apply bg-accent/20 border-accent/40;
+  }
+
+  /* Button styles */
+  .btn-primary {
+    @apply px-6 py-3 bg-accent text-white font-semibold rounded-xl
+           transition-all duration-300 hover:bg-accent-dark
+           hover:shadow-lg hover:shadow-accent/25 active:scale-95;
+  }
+
+  .btn-outline {
+    @apply px-6 py-3 border-2 border-accent text-accent font-semibold rounded-xl
+           transition-all duration-300 hover:bg-accent hover:text-white
+           hover:shadow-lg hover:shadow-accent/25 active:scale-95;
+  }
+
+  /* Background noise texture */
+  .noise-bg::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    opacity: 0.015;
+    z-index: 9999;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  }
+}
+
+/* ---------- Animated Background Orbs ---------- */
+.bg-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.07;
+  pointer-events: none;
+}
+
+.bg-orb-1 {
+  width: 600px;
+  height: 600px;
+  background: #1e90ff;
+  top: -200px;
+  right: -200px;
+  animation: blob 7s infinite;
+}
+
+.bg-orb-2 {
+  width: 500px;
+  height: 500px;
+  background: #4da6ff;
+  bottom: -150px;
+  left: -150px;
+  animation: blob 7s infinite 3.5s;
+}
+
+.bg-orb-3 {
+  width: 400px;
+  height: 400px;
+  background: #87cefa;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: blob 10s infinite 2s;
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+/* ---------- Grid Background Pattern ---------- */
+.grid-bg {
+  background-image: linear-gradient(
+      rgba(30, 144, 255, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(30, 144, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ---------- Timeline ---------- */
+.timeline-line {
+  @apply absolute left-0 md:left-1/2 top-0 bottom-0 w-px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #1e90ff40 10%,
+    #1e90ff40 90%,
+    transparent
+  );
+}
+
+/* ---------- Particle Animation ---------- */
+@keyframes particle-float {
+  0%,
+  100% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-100vh) translateX(20px);
+  }
+}
+
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #1e90ff;
+  border-radius: 50%;
+  animation: particle-float linear infinite;
+  opacity: 0;
+}
