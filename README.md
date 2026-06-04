@@ -2,6 +2,8 @@
 
 A modern, animated portfolio website built with **Next.js 14**, **Tailwind CSS**, **Framer Motion**, and **TypeScript**.
 
+View:- [portfolio](https://portfolio-clean-dun.vercel.app)
+
 ## Features
 
 - Dark glassmorphism design with DodgerBlue accent
