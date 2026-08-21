@@ -1,0 +1,24 @@
+<svg width="960" height="540" viewBox="0 0 960 540" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Healthcare cost prediction model dashboard</title>
+  <rect width="960" height="540" fill="#050914"/>
+  <path d="M0 74H960M0 148H960M0 222H960M0 296H960M0 370H960M0 444H960" stroke="#1B2B49" stroke-width="1"/>
+  <path d="M70 0V540M190 0V540M310 0V540M430 0V540M550 0V540M670 0V540M790 0V540M910 0V540" stroke="#1B2B49" stroke-width="1"/>
+  <rect x="54" y="54" width="852" height="70" rx="4" fill="#0B1325" stroke="#2463A8"/>
+  <circle cx="88" cy="89" r="10" fill="#39D98A"/>
+  <text x="116" y="84" fill="#77E9F6" font-family="monospace" font-size="18" letter-spacing="3">HEALTHCARE COST FORECAST</text>
+  <text x="116" y="108" fill="#66758F" font-family="monospace" font-size="13">MODEL HEALTH / TRAINING COMPLETE</text>
+  <rect x="54" y="160" width="534" height="324" rx="4" fill="#08101F" stroke="#213959"/>
+  <path d="M94 423C150 381 190 398 238 353C289 306 329 332 374 260C418 189 468 294 517 210" stroke="#22D3EE" stroke-width="5" stroke-linecap="round"/>
+  <path d="M94 447H546M94 377H546M94 307H546M94 237H546" stroke="#213959" stroke-dasharray="5 9"/>
+  <circle cx="517" cy="210" r="8" fill="#818CF8" stroke="#D2D8FF" stroke-width="3"/>
+  <text x="94" y="198" fill="#71809A" font-family="monospace" font-size="13">PREDICTED TREATMENT COST</text>
+  <rect x="622" y="160" width="284" height="92" rx="4" fill="#0B1325" stroke="#4F46E5"/>
+  <text x="650" y="197" fill="#8B9AFD" font-family="monospace" font-size="13">REGRESSION</text>
+  <text x="650" y="231" fill="#F5F8FF" font-family="monospace" font-size="28" font-weight="700">R² 0.88</text>
+  <rect x="622" y="274" width="284" height="92" rx="4" fill="#0B1325" stroke="#16A87A"/>
+  <text x="650" y="311" fill="#50E6A8" font-family="monospace" font-size="13">CLASSIFICATION</text>
+  <text x="650" y="345" fill="#F5F8FF" font-family="monospace" font-size="28" font-weight="700">F1 88.7%</text>
+  <rect x="622" y="388" width="284" height="96" rx="4" fill="#0B1325" stroke="#2463A8"/>
+  <text x="650" y="425" fill="#77E9F6" font-family="monospace" font-size="13">TRAINING SET</text>
+  <text x="650" y="459" fill="#F5F8FF" font-family="monospace" font-size="28" font-weight="700">20K+ RECORDS</text>
+</svg>

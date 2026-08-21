@@ -1,0 +1,32 @@
+<svg width="960" height="540" viewBox="0 0 960 540" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Roommate multi-service platform dashboard</title>
+  <rect width="960" height="540" fill="#0B0716"/>
+  <path d="M0 72H960M0 144H960M0 216H960M0 288H960M0 360H960M0 432H960" stroke="#2C1B45"/>
+  <path d="M72 0V540M144 0V540M216 0V540M288 0V540M360 0V540M432 0V540M504 0V540M576 0V540M648 0V540M720 0V540M792 0V540M864 0V540" stroke="#2C1B45"/>
+  <text x="58" y="70" fill="#E9B8FF" font-family="monospace" font-size="18" letter-spacing="3">ROOMMATE / SERVICE HUB</text>
+  <text x="58" y="98" fill="#987AAF" font-family="monospace" font-size="13">MULTI-VENDOR OPERATIONS / LIVE PLATFORM VIEW</text>
+  <rect x="58" y="142" width="194" height="142" rx="10" fill="#181026" stroke="#B95CE8" stroke-width="2"/>
+  <path d="M90 245V207L112 190L134 207V245H90Z" fill="#B95CE8" fill-opacity=".2" stroke="#EAB7FF" stroke-width="2"/>
+  <text x="156" y="210" fill="#EAB7FF" font-family="monospace" font-size="14">STAYS</text>
+  <text x="156" y="239" fill="#F9F3FF" font-family="monospace" font-size="22" font-weight="700">1K+</text>
+  <rect x="276" y="142" width="194" height="142" rx="10" fill="#181026" stroke="#B95CE8" stroke-width="2"/>
+  <path d="M308 195H352L365 209L352 223H308L295 209L308 195Z" fill="#B95CE8" fill-opacity=".2" stroke="#EAB7FF" stroke-width="2"/>
+  <text x="374" y="210" fill="#EAB7FF" font-family="monospace" font-size="14">FOOD</text>
+  <text x="374" y="239" fill="#F9F3FF" font-family="monospace" font-size="22" font-weight="700">LIVE</text>
+  <rect x="494" y="142" width="194" height="142" rx="10" fill="#181026" stroke="#B95CE8" stroke-width="2"/>
+  <path d="M530 188H568V232H530V188Z" fill="#B95CE8" fill-opacity=".2" stroke="#EAB7FF" stroke-width="2"/>
+  <path d="M524 182H574" stroke="#EAB7FF" stroke-width="2" stroke-linecap="round"/>
+  <text x="592" y="210" fill="#EAB7FF" font-family="monospace" font-size="14">LAUNDRY</text>
+  <text x="592" y="239" fill="#F9F3FF" font-family="monospace" font-size="22" font-weight="700">SYNCED</text>
+  <rect x="712" y="142" width="194" height="142" rx="10" fill="#181026" stroke="#B95CE8" stroke-width="2"/>
+  <path d="M750 217H818L802 194L787 217L777 202L765 217Z" fill="#B95CE8" fill-opacity=".2" stroke="#EAB7FF" stroke-width="2" stroke-linejoin="round"/>
+  <text x="820" y="210" fill="#EAB7FF" font-family="monospace" font-size="14">MOVE</text>
+  <text x="820" y="239" fill="#F9F3FF" font-family="monospace" font-size="22" font-weight="700">FAST</text>
+  <rect x="58" y="324" width="550" height="158" rx="10" fill="#181026" stroke="#5B2C86"/>
+  <text x="84" y="360" fill="#A58BB8" font-family="monospace" font-size="13">SERVICE REQUESTS / 24H</text>
+  <path d="M86 445C142 423 167 442 214 404C258 369 310 404 350 366C397 319 452 387 498 344C532 313 553 329 580 304" stroke="#D681FF" stroke-width="5" stroke-linecap="round"/>
+  <rect x="636" y="324" width="270" height="158" rx="10" fill="#181026" stroke="#5B2C86"/>
+  <text x="662" y="360" fill="#A58BB8" font-family="monospace" font-size="13">RELIABILITY</text>
+  <text x="662" y="414" fill="#F9F3FF" font-family="monospace" font-size="40" font-weight="700">99%</text>
+  <text x="662" y="446" fill="#6EE7B7" font-family="monospace" font-size="15">UPTIME</text>
+</svg>
