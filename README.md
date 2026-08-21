@@ -2,7 +2,7 @@
 
 A modern, animated portfolio website built with **Next.js 14**, **Tailwind CSS**, **Framer Motion**, and **TypeScript**.
 
-View:- [portfolio](https://portfolio-clean-dun.vercel.app)
+View:- [portfolio](https://anubhav-snehi-portfolio.vercel.app)
 
 ## Features
 

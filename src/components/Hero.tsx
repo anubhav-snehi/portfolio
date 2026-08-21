@@ -9,10 +9,12 @@ import {
   SiApachekafka,
   SiDocker,
   SiKubernetes,
+  SiPython,
   SiReact,
   SiSpringboot,
+  SiTypescript,
 } from "react-icons/si";
-import { FaSnowflake } from "react-icons/fa";
+import { FaJava, FaMicrosoft, FaSnowflake } from "react-icons/fa";
 
 const roles = [
   "Lead Engineer",
@@ -60,6 +62,10 @@ const stackSignals = [
   { name: "Docker", icon: <SiDocker />, color: "#2496ed" },
   { name: "Kubernetes", icon: <SiKubernetes />, color: "#326ce5" },
   { name: "React", icon: <SiReact />, color: "#61dafb" },
+  { name: "Java", icon: <FaJava />, color: "#f89820" },
+  { name: "Python", icon: <SiPython />, color: "#ffd343" },
+  { name: "TypeScript", icon: <SiTypescript />, color: "#3178c6" },
+  { name: "Azure", icon: <FaMicrosoft />, color: "#0078d4" },
 ];
 
 function Particles() {
@@ -216,7 +222,19 @@ function MobileTelemetry() {
 }
 
 function StackRail() {
-  const [activeStack, setActiveStack] = useState(stackSignals[0]);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const activeStack = stackSignals[activeIndex];
+
+  useEffect(() => {
+    const timeout = window.setTimeout(() => {
+      setActiveIndex((currentIndex) => (currentIndex + 1) % stackSignals.length);
+    }, 1000);
+    return () => window.clearTimeout(timeout);
+  }, [activeIndex]);
+
+  const selectStack = (name: string) => {
+    setActiveIndex(stackSignals.findIndex((item) => item.name === name));
+  };
 
   return (
     <motion.div
@@ -228,17 +246,17 @@ function StackRail() {
         <span>Stack / deployed</span>
         <span className="text-cyan">{activeStack.name}</span>
       </div>
-      <div className="flex items-center justify-between gap-1">
-        {stackSignals.map((item, index) => (
+      <div className="grid grid-cols-6 gap-1.5 sm:grid-cols-11">
+        {stackSignals.map((item) => (
           <motion.button
             key={item.name}
             type="button"
-            onMouseEnter={() => setActiveStack(item)}
-            onFocus={() => setActiveStack(item)}
-            onClick={() => setActiveStack(item)}
+            onMouseEnter={() => selectStack(item.name)}
+            onFocus={() => selectStack(item.name)}
+            onClick={() => selectStack(item.name)}
             whileHover={{ y: -3, scale: 1.08 }}
             whileTap={{ scale: 0.95 }}
-            className={`relative flex h-9 w-9 items-center justify-center border text-base transition-colors focus:outline-none focus:ring-1 focus:ring-cyan sm:h-10 sm:w-10 ${activeStack.name === item.name ? "bg-slate-950" : "border-transparent text-slate-600 hover:border-cyan/25"}`}
+            className={`relative flex h-9 w-full items-center justify-center border text-base transition-colors focus:outline-none focus:ring-1 focus:ring-cyan sm:h-10 ${activeStack.name === item.name ? "bg-slate-950" : "border-transparent text-slate-600 hover:border-cyan/25"}`}
             style={{
               color: item.color,
               borderColor: activeStack.name === item.name ? `${item.color}80` : undefined,
@@ -247,15 +265,15 @@ function StackRail() {
             aria-label={`Select ${item.name} technology`}
           >
             {item.icon}
-            {index < stackSignals.length - 1 && (
-              <motion.span
-                animate={{ opacity: [0.2, 0.8, 0.2] }}
-                transition={{ duration: 1.8, delay: index * 0.18, repeat: Infinity }}
-                className="absolute -right-2 hidden h-px w-3 bg-cyan/35 sm:block"
-              />
-            )}
           </motion.button>
         ))}
+      </div>
+      <div className="relative mt-3 h-px overflow-hidden bg-cyan/15">
+        <motion.span
+          animate={{ left: ["-10%", "100%"] }}
+          transition={{ duration: 2.6, repeat: Infinity, ease: "linear" }}
+          className="absolute top-0 h-px w-16 bg-gradient-to-r from-transparent via-cyan to-transparent shadow-[0_0_10px_#22d3ee]"
+        />
       </div>
     </motion.div>
   );
