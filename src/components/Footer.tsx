@@ -1,7 +1,14 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FaLinkedinIn } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaLinkedinIn,
+  FaSnapchatGhost,
+  FaTelegramPlane,
+  FaWhatsapp,
+} from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { HiOutlineMail, HiOutlineHeart, HiArrowUp } from "react-icons/hi";
 import PortfolioLogo from "./PortfolioLogo";
 
@@ -47,6 +54,36 @@ export default function Footer() {
                 label: "Email",
                 color: "#818cf8",
               },
+              {
+                icon: <FaInstagram size={15} />,
+                href: "https://instagram.com/anubhav_originals",
+                label: "Instagram",
+                color: "#e1306c",
+              },
+              {
+                icon: <FaXTwitter size={14} />,
+                href: "https://x.com/AnubhavSnehi",
+                label: "X",
+                color: "#dbeafe",
+              },
+              {
+                icon: <FaSnapchatGhost size={15} />,
+                href: "https://www.snapchat.com/add/anubhav_snehi",
+                label: "Snapchat",
+                color: "#facc15",
+              },
+              {
+                icon: <FaTelegramPlane size={15} />,
+                href: "https://t.me/anubhav_snehi",
+                label: "Telegram",
+                color: "#229ed9",
+              },
+              {
+                icon: <FaWhatsapp size={16} />,
+                href: "https://wa.me/916207665579",
+                label: "WhatsApp",
+                color: "#25d366",
+              },
             ].map((s) => (
               <motion.a
                 key={s.label}
@@ -55,12 +92,13 @@ export default function Footer() {
                 rel={s.href.startsWith("http") ? "noopener noreferrer" : undefined}
                 whileHover={{ scale: 1.1, y: -2 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-9 h-9 rounded-xl flex items-center justify-center text-gray-500 hover:text-white transition-all duration-300"
+                className="social-control w-9 h-9 rounded-lg flex items-center justify-center text-gray-500 hover:text-white transition-all duration-300"
                 style={{
                   background: "rgba(255,255,255,0.04)",
                   border: "1px solid rgba(255,255,255,0.08)",
                 }}
                 aria-label={s.label}
+                title={s.label}
               >
                 <span style={{ color: s.color }}>{s.icon}</span>
               </motion.a>

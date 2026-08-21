@@ -92,7 +92,7 @@ function FeaturedProjectCard({ project }: { project: Project }) {
         <div className="md:col-span-3">
           <div className="flex items-start gap-4 mb-5">
             <div
-              className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110"
+              className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110"
               style={{
                 background: `${project.color}15`,
                 border: `1px solid ${project.color}30`,
@@ -161,7 +161,7 @@ function FeaturedProjectCard({ project }: { project: Project }) {
               {project.tech.map((t) => (
                 <span
                   key={t}
-                  className="px-2.5 py-1 text-xs font-medium rounded-lg transition-all duration-300"
+                  className="px-2.5 py-1 text-xs font-medium rounded-md transition-all duration-300"
                   style={{
                     background: `${project.color}0d`,
                     color: `${project.color}cc`,
@@ -224,7 +224,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         <div className="flex items-start justify-between gap-3 mb-5">
           <div className="flex items-start gap-3">
             <div
-              className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110"
+              className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110"
               style={{
                 background: `${project.color}15`,
                 border: `1px solid ${project.color}30`,
@@ -247,7 +247,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               href={project.link}
               target="_blank"
               rel="noopener noreferrer"
-              className="p-2 rounded-lg text-gray-600 hover:text-white transition-all duration-300 hover:bg-dark-lighter/60 flex-shrink-0"
+              className="p-2 rounded-md text-gray-600 hover:text-white transition-all duration-300 hover:bg-dark-lighter/60 flex-shrink-0"
               aria-label={`Visit ${project.title}`}
             >
               <HiOutlineExternalLink size={16} />

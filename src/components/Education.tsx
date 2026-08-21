@@ -121,7 +121,7 @@ export default function Education() {
             />
             <div className="flex items-start gap-5 relative z-10">
               <div
-                className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
+                className="w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0"
                 style={{
                   background: "rgba(30,144,255,0.12)",
                   border: "1px solid rgba(30,144,255,0.25)",
@@ -171,7 +171,7 @@ export default function Education() {
                 <HiOutlineBadgeCheck style={{ color: cert.color }} size={18} />
                 <h3 className="text-white font-bold text-sm">{cert.issuer}</h3>
                 <span
-                  className="ml-auto text-xs px-2 py-0.5 rounded-full font-medium"
+                  className="ml-auto text-xs px-2 py-0.5 rounded-md font-medium"
                   style={{
                     background: `${cert.color}12`,
                     color: cert.color,

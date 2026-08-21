@@ -63,7 +63,7 @@ export default function Contact() {
   };
 
   const inputClass =
-    "w-full px-4 py-3 rounded-xl text-white placeholder-gray-600 text-sm transition-all duration-300 border"
+    "w-full px-4 py-3 rounded-lg text-white placeholder-gray-600 text-sm transition-all duration-300 border"
   const inputStyle = {
     background: "rgba(255,255,255,0.03)",
     borderColor: "rgba(255,255,255,0.08)",
@@ -104,7 +104,7 @@ export default function Contact() {
                     }}
                   >
                     <div
-                      className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110"
+                      className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:scale-110"
                       style={{
                         background: `${item.color}14`,
                         border: `1px solid ${item.color}28`,
@@ -135,7 +135,7 @@ export default function Contact() {
                     }}
                   >
                     <div
-                      className="w-11 h-11 rounded-xl flex items-center justify-center flex-shrink-0"
+                      className="w-11 h-11 rounded-lg flex items-center justify-center flex-shrink-0"
                       style={{
                         background: `${item.color}14`,
                         border: `1px solid ${item.color}28`,

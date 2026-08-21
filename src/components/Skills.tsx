@@ -135,7 +135,7 @@ function SkillCard({ category, index }: { category: SkillCategory; index: number
       {/* Header */}
       <div className="flex items-center gap-3 mb-5">
         <div
-          className="w-11 h-11 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110"
+          className="w-11 h-11 rounded-lg flex items-center justify-center transition-all duration-300 group-hover:scale-110"
           style={{
             background: `${category.color}15`,
             border: `1px solid ${category.color}30`,
@@ -146,7 +146,7 @@ function SkillCard({ category, index }: { category: SkillCategory; index: number
         </div>
         <h3 className="text-white font-bold text-base">{category.title}</h3>
         <span
-          className="ml-auto text-xs font-mono px-2 py-0.5 rounded-sm"
+          className="ml-auto text-xs font-mono px-2 py-0.5 rounded-md"
           style={{
             background: `${category.color}12`,
             color: category.color,
@@ -165,7 +165,7 @@ function SkillCard({ category, index }: { category: SkillCategory; index: number
             initial={{ opacity: 0, scale: 0.85 }}
             animate={inView ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.3, delay: 0.2 + i * 0.04 }}
-            className="flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-sm
+            className="flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-md
                        transition-all duration-300 cursor-default"
             style={{
               background: `${category.color}0d`,

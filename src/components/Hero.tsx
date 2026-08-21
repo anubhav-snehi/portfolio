@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
-import { HiOutlineLocationMarker, HiOutlineMail } from "react-icons/hi";
+import { HiOutlineDownload, HiOutlineLocationMarker, HiOutlineMail } from "react-icons/hi";
 import { FaLinkedinIn } from "react-icons/fa";
 import { HiArrowDown } from "react-icons/hi";
 import {
@@ -71,13 +71,14 @@ const stackSignals = [
 function Particles() {
   const particles = useMemo(
     () =>
-      Array.from({ length: 40 }, (_, i) => ({
+      Array.from({ length: 72 }, (_, i) => ({
         id: i,
         left: `${(i * 37 + 11) % 100}%`,
-        duration: `${10 + ((i * 7) % 15)}s`,
+        duration: `${8 + ((i * 7) % 12)}s`,
         delay: `${(i * 11) % 12}s`,
-        size: `${1 + ((i * 5) % 3)}px`,
-        color: i % 3 === 0 ? "#818cf8" : i % 3 === 1 ? "#1e90ff" : "#a855f7",
+        size: `${2 + ((i * 5) % 4)}px`,
+        color: ["#22d3ee", "#60a5fa", "#818cf8", "#34d399"][i % 4],
+        signal: i % 9 === 0,
       })),
     []
   );
@@ -87,7 +88,7 @@ function Particles() {
       {particles.map((p) => (
         <div
           key={p.id}
-          className="particle"
+          className={`particle ${p.signal ? "particle-signal" : ""}`}
           style={{
             left: p.left,
             bottom: "-10px",
@@ -96,6 +97,7 @@ function Particles() {
             background: p.color,
             animationDuration: p.duration,
             animationDelay: p.delay,
+            boxShadow: `0 0 ${p.signal ? "14px" : "8px"} ${p.color}`,
           }}
         />
       ))}
@@ -283,13 +285,6 @@ export default function Hero() {
   const [roleIndex, setRoleIndex] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
-
-  useEffect(() => {
-    const onScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
 
   useEffect(() => {
     const currentRole = roles[roleIndex];
@@ -322,10 +317,7 @@ export default function Hero() {
       <div className="circuit-grid absolute inset-0" />
       <Particles />
 
-      <div
-        className="section-container relative z-10 w-full pt-24"
-        style={{ transform: `translateY(${scrollY * 0.08}px)` }}
-      >
+      <div className="section-container relative z-10 w-full pt-24">
         <div className="grid lg:grid-cols-2 gap-12 xl:gap-20 items-center">
           {/* ── Left column ── */}
           <div className="text-left">
@@ -369,14 +361,12 @@ export default function Hero() {
               className="h-10 md:h-12 flex items-center mb-7"
             >
               <span
-                className="text-lg md:text-xl font-semibold font-mono tracking-tight"
-                style={{ color: "#67e8f9" }}
+                className="role-signal text-lg md:text-xl font-semibold font-mono tracking-tight"
               >
                 {displayText}
               </span>
               <span
-                className="w-0.5 h-6 md:h-7 ml-1 animate-blink-caret"
-                style={{ background: "#67e8f9" }}
+                className="role-caret w-0.5 h-6 md:h-7 ml-1 animate-blink-caret"
               />
             </motion.div>
 
@@ -422,6 +412,14 @@ export default function Hero() {
               >
                 View My Work
               </a>
+              <a
+                href="/resume/Anubhav_Resume.pdf"
+                download="Anubhav_Snehi_Resume.pdf"
+                className="btn-outline flex items-center gap-2 text-sm"
+              >
+                <HiOutlineDownload size={17} />
+                Resume
+              </a>
             </motion.div>
 
             {/* Social links */}
@@ -429,7 +427,7 @@ export default function Hero() {
               initial={false}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.9 }}
-              className="flex items-center gap-3"
+              className="flex flex-wrap items-center gap-4"
             >
               {[
                 {
@@ -445,7 +443,7 @@ export default function Hero() {
                   color: "#818cf8",
                 },
               ].map((social) => (
-                <motion.a
+                <a
                   key={social.label}
                   href={social.href}
                   target={social.href.startsWith("http") ? "_blank" : undefined}
@@ -454,18 +452,17 @@ export default function Hero() {
                       ? "noopener noreferrer"
                       : undefined
                   }
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                  className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-gray-400 hover:text-white transition-all duration-300"
+                  className="hero-social-link flex items-center gap-3 rounded-lg border px-5 py-3 text-sm font-medium text-gray-400 transition-all duration-200 hover:-translate-y-1 hover:text-white focus:outline-none focus:ring-1 focus:ring-cyan"
                   style={{
                     background: "rgba(255,255,255,0.04)",
                     border: "1px solid rgba(255,255,255,0.08)",
                   }}
                   aria-label={social.label}
+                  title={social.label}
                 >
                   <span style={{ color: social.color }}>{social.icon}</span>
-                  {social.label}
-                </motion.a>
+                  <span>{social.label}</span>
+                </a>
               ))}
             </motion.div>
 

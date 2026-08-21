@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { HiMenuAlt3, HiX } from "react-icons/hi";
+import { HiMenuAlt3, HiMoon, HiSun, HiX } from "react-icons/hi";
 import PortfolioLogo from "./PortfolioLogo";
 
 const navLinks = [
@@ -20,6 +20,13 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
   const [scrollProgress, setScrollProgress] = useState(0);
+  const [isLightMode, setIsLightMode] = useState(false);
+
+  const toggleTheme = () => {
+    const nextLightMode = !isLightMode;
+    setIsLightMode(nextLightMode);
+    document.documentElement.classList.toggle("light", nextLightMode);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -119,10 +126,27 @@ export default function Navbar() {
               <a
                 href="#contact"
                 onClick={(e) => { e.preventDefault(); handleClick("#contact"); }}
-                className="hidden md:block btn-primary rounded-none text-xs px-5 py-2 font-mono uppercase tracking-[0.1em]"
+                className="hidden md:block btn-primary text-xs px-5 py-2 font-mono uppercase tracking-[0.1em]"
               >
                 Hire Me
               </a>
+
+              <button
+                type="button"
+                onClick={toggleTheme}
+                className="flex h-9 w-9 items-center justify-center border border-cyan/25 bg-cyan/[0.04] text-cyan transition-all hover:border-cyan/60 hover:bg-cyan/10 focus:outline-none focus:ring-1 focus:ring-cyan"
+                aria-label={isLightMode ? "Switch to dark mode" : "Switch to light mode"}
+                title={isLightMode ? "Switch to dark mode" : "Switch to light mode"}
+              >
+                <motion.span
+                  key={isLightMode ? "sun" : "moon"}
+                  initial={{ rotate: -45, opacity: 0, scale: 0.7 }}
+                  animate={{ rotate: 0, opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.2 }}
+                >
+                  {isLightMode ? <HiMoon size={18} /> : <HiSun size={18} />}
+                </motion.span>
+              </button>
 
               <button
                 onClick={() => setMobileOpen(!mobileOpen)}
@@ -154,7 +178,7 @@ export default function Navbar() {
                     initial={{ opacity: 0, x: -16 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.05 }}
-                    className={`block px-4 py-3 rounded-xl text-sm font-medium transition-all duration-300 ${
+                    className={`block px-4 py-3 rounded-lg text-sm font-medium transition-all duration-300 ${
                       activeSection === link.href.replace("#", "")
                         ? "text-white bg-accent/10 border border-accent/20"
                         : "text-gray-400 hover:text-white hover:bg-dark-lighter/50"
