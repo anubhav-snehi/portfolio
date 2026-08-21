@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Anubhav Snehi | Lead Engineer",
     description:
-      "Building large-scale distributed data and backend platforms. 4+ years of experience.",
+      "Building large-scale distributed data and backend platforms. 5+ years of experience.",
     type: "website",
   },
 };

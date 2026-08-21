@@ -11,7 +11,7 @@ import {
 } from "react-icons/hi";
 
 const stats = [
-  { value: 4, suffix: "+", label: "Years Experience", color: "#1e90ff" },
+  { value: 5, suffix: "+", label: "Years Experience", color: "#1e90ff" },
   { value: 10, suffix: "M+", label: "Records / Day", color: "#818cf8" },
   { value: 80, suffix: "%", label: "Throughput Boost", color: "#a855f7" },
   { value: 90, suffix: "%", label: "Tasks Automated", color: "#22d3ee" },
@@ -112,7 +112,7 @@ export default function About() {
             />
             <p className="text-gray-300 text-base md:text-lg leading-relaxed relative z-10">
               Lead Engineer with{" "}
-              <strong className="text-white">4+ years</strong> of experience
+              <strong className="text-white">5+ years</strong> of experience
               building and owning large-scale distributed data and backend
               platforms. Delivered{" "}
               <strong className="gradient-text">10M+ records/day</strong>{" "}

@@ -273,6 +273,10 @@
   filter: saturate(1.2);
 }
 
+.particle-layer {
+  opacity: 0.9;
+}
+
 .particle-signal {
   border: 1px solid rgba(255, 255, 255, 0.8);
   filter: saturate(1.4) brightness(1.25);
@@ -344,6 +348,11 @@ input:focus, textarea:focus {
 .light .role-caret {
   background: #1d4ed8;
   box-shadow: 0 0 10px rgba(37, 99, 235, 0.35);
+}
+
+.light .availability-status {
+  color: #047857 !important;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 .light .system-label,
@@ -439,6 +448,11 @@ input:focus, textarea:focus {
   filter: saturate(1.35) contrast(1.1);
 }
 
+.light .particle-layer {
+  opacity: 1;
+  filter: brightness(1.2) saturate(1.12);
+}
+
 .light .hero-console-bg {
   background:
     radial-gradient(circle at 84% 18%, rgba(34, 211, 238, 0.25), transparent 26rem),
@@ -532,6 +546,103 @@ input:focus, textarea:focus {
   color: #c0d6e7 !important;
 }
 
+/* Keep the white console shell legible in daylight. */
+.light .hero-telemetry > .corner-frame > :not(.relative) .text-cyan,
+.light .hero-telemetry > .corner-frame > :not(.relative) .text-emerald-400 {
+  color: #075985 !important;
+}
+
+.light .hero-telemetry .corner-frame > div:first-child {
+  color: #075985 !important;
+  border-color: rgba(8, 145, 178, 0.32) !important;
+}
+
+.light .hero-telemetry > .corner-frame > .mt-3 {
+  background: #f0fbfd !important;
+  border-color: rgba(8, 145, 178, 0.3) !important;
+}
+
+.light .hero-telemetry > .corner-frame > .mt-3 .text-cyan {
+  color: #075985 !important;
+}
+
+.light .hero-telemetry > .corner-frame > .mt-3 .text-slate-400 {
+  color: #385a72 !important;
+}
+
+.light .hero-telemetry > .corner-frame > .mt-3 .text-emerald-300 {
+  color: #047857 !important;
+}
+
+.light .hero-telemetry > .corner-frame > .mt-5 .text-slate-100 {
+  color: #0b2545 !important;
+}
+
+.light .hero-telemetry > .corner-frame > .mt-5 .text-slate-500 {
+  color: #31516b !important;
+}
+
+/* The instrument canvas remains dark in light mode, so use luminous telemetry text. */
+.light .hero-telemetry .bg-\[\#040711\] .text-cyan,
+.light .hero-telemetry .bg-\[\#040711\] .text-indigo-300,
+.light .hero-telemetry .bg-\[\#040711\] .text-indigo-200,
+.light .hero-telemetry .bg-\[\#040711\] .text-emerald-300 {
+  color: #e0f7ff !important;
+}
+
+.light .hero-telemetry .bg-\[\#040711\] .text-cyan { color: #67e8f9 !important; }
+.light .hero-telemetry .bg-\[\#040711\] .text-indigo-300,
+.light .hero-telemetry .bg-\[\#040711\] .text-indigo-200 { color: #c7d2fe !important; }
+.light .hero-telemetry .bg-\[\#040711\] .text-emerald-300 { color: #6ee7b7 !important; }
+
+.light .hero-telemetry .bg-\[\#040711\] .bg-cyan\/15 {
+  background-color: rgba(34, 211, 238, 0.2) !important;
+}
+
+.light .hero-telemetry .bg-\[\#040711\] .border-cyan\/15,
+.light .hero-telemetry .bg-\[\#040711\] .border-cyan\/20,
+.light .hero-telemetry .bg-\[\#040711\] .border-cyan\/25,
+.light .hero-telemetry .bg-\[\#040711\] .border-cyan\/30,
+.light .hero-telemetry .bg-\[\#040711\] .border-indigo-400\/20 {
+  border-color: rgba(103, 232, 249, 0.35) !important;
+}
+
+/* The live system is a self-contained dark instrument in both themes. */
+.light .hero-telemetry .corner-frame {
+  background: #071827 !important;
+  border-color: rgba(34, 211, 238, 0.62) !important;
+  box-shadow: inset 3px 0 0 rgba(34, 211, 238, 0.8), 0 20px 38px rgba(20, 72, 105, 0.24) !important;
+}
+
+.light .hero-telemetry .corner-frame > div:first-child {
+  color: #67e8f9 !important;
+  border-color: rgba(103, 232, 249, 0.3) !important;
+}
+
+.light .hero-telemetry .corner-frame > .mt-3 {
+  background: #0b2942 !important;
+  border-color: rgba(103, 232, 249, 0.28) !important;
+}
+
+.light .hero-telemetry .corner-frame > .mt-3 .text-cyan { color: #67e8f9 !important; }
+.light .hero-telemetry .corner-frame > .mt-3 .text-slate-400 { color: #d5e4ed !important; }
+.light .hero-telemetry .corner-frame > .mt-3 .text-emerald-300 { color: #6ee7b7 !important; }
+.light .hero-telemetry .corner-frame > .mt-5 .text-slate-100 { color: #f0f9ff !important; }
+.light .hero-telemetry .corner-frame > .mt-5 .text-slate-500 {
+  color: #c6d9e6 !important;
+  font-weight: 600;
+}
+
+.light .hero-telemetry .bg-\[\#040711\] button {
+  opacity: 1 !important;
+  text-shadow: 0 0 10px currentColor;
+}
+
+.light .hero-telemetry .bg-\[\#040711\] button.text-cyan { color: #a5f3fc !important; }
+.light .hero-telemetry .bg-\[\#040711\] button.text-indigo-300,
+.light .hero-telemetry .bg-\[\#040711\] button.text-indigo-200 { color: #ddd6fe !important; }
+.light .hero-telemetry .bg-\[\#040711\] button.text-emerald-300 { color: #a7f3d0 !important; }
+
 .light .btn-outline {
   background: rgba(255, 255, 255, 0.55);
   border-color: rgba(8, 145, 178, 0.5);
@@ -549,6 +660,18 @@ input:focus, textarea:focus {
   background: rgba(255, 255, 255, 0.88) !important;
   border-color: rgba(8, 145, 178, 0.28) !important;
   box-shadow: 0 3px 10px rgba(21, 64, 99, 0.08);
+}
+
+.light .theme-switch {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border-color: rgba(8, 145, 178, 0.35) !important;
+  box-shadow: inset 0 1px 3px rgba(21, 64, 99, 0.1);
+}
+
+.light .theme-switch .bg-\[\#123b5a\] {
+  background: #ffffff !important;
+  border-color: rgba(8, 145, 178, 0.35) !important;
+  box-shadow: 0 3px 10px rgba(21, 64, 99, 0.16) !important;
 }
 
 .light .hero-social-link {

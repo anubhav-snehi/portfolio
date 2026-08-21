@@ -134,18 +134,17 @@ export default function Navbar() {
               <button
                 type="button"
                 onClick={toggleTheme}
-                className="flex h-9 w-9 items-center justify-center border border-cyan/25 bg-cyan/[0.04] text-cyan transition-all hover:border-cyan/60 hover:bg-cyan/10 focus:outline-none focus:ring-1 focus:ring-cyan"
+                className="theme-switch relative grid h-9 w-[4.5rem] grid-cols-2 items-center rounded-full border border-cyan/30 bg-[#07111f]/80 p-1 text-cyan shadow-inner shadow-black/20 transition-all duration-300 hover:border-cyan/70 focus:outline-none focus:ring-1 focus:ring-cyan"
                 aria-label={isLightMode ? "Switch to dark mode" : "Switch to light mode"}
                 title={isLightMode ? "Switch to dark mode" : "Switch to light mode"}
               >
                 <motion.span
-                  key={isLightMode ? "sun" : "moon"}
-                  initial={{ rotate: -45, opacity: 0, scale: 0.7 }}
-                  animate={{ rotate: 0, opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.2 }}
-                >
-                  {isLightMode ? <HiMoon size={18} /> : <HiSun size={18} />}
-                </motion.span>
+                  animate={{ x: isLightMode ? 0 : 32 }}
+                  transition={{ type: "spring", stiffness: 420, damping: 30 }}
+                  className="absolute left-1 top-1 h-7 w-7 rounded-full border border-cyan/30 bg-[#123b5a] shadow-[0_3px_10px_rgba(8,145,178,0.28)]"
+                />
+                <span className="relative z-10 flex items-center justify-center"><HiSun size={15} className={isLightMode ? "text-amber-400" : "text-slate-500"} /></span>
+                <span className="relative z-10 flex items-center justify-center"><HiMoon size={15} className={isLightMode ? "text-slate-500" : "text-indigo-200"} /></span>
               </button>
 
               <button

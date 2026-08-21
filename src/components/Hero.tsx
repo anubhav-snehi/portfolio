@@ -71,7 +71,7 @@ const stackSignals = [
 function Particles() {
   const particles = useMemo(
     () =>
-      Array.from({ length: 72 }, (_, i) => ({
+      Array.from({ length: 60 }, (_, i) => ({
         id: i,
         left: `${(i * 37 + 11) % 100}%`,
         duration: `${8 + ((i * 7) % 12)}s`,
@@ -84,7 +84,7 @@ function Particles() {
   );
 
   return (
-    <div className="absolute inset-0 overflow-hidden pointer-events-none">
+    <div className="particle-layer absolute inset-0 overflow-hidden pointer-events-none">
       {particles.map((p) => (
         <div
           key={p.id}
@@ -336,7 +336,7 @@ export default function Hero() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75" />
                 <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-green-400" />
               </span>
-              <span className="text-emerald-400 font-medium">
+              <span className="availability-status text-emerald-400 font-medium">
                 Open to exciting opportunities
               </span>
             </motion.div>
