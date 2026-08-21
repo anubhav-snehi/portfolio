@@ -21,6 +21,17 @@
     overscroll-behavior-y: none;
   }
 
+  .content-protection {
+    -webkit-user-select: none;
+    user-select: none;
+  }
+
+  .content-protection input,
+  .content-protection textarea {
+    -webkit-user-select: text;
+    user-select: text;
+  }
+
   ::selection { background-color: rgba(129, 140, 248, 0.35); color: #fff; }
 
   ::-webkit-scrollbar { width: 5px; }
@@ -181,6 +192,34 @@
   pointer-events: none;
 }
 
+/* ---------- AS//SYSTEMS brand mark ---------- */
+.brand-mark {
+  filter: drop-shadow(0 5px 10px rgba(34, 211, 238, 0.18));
+  transition: filter 220ms ease, transform 220ms ease;
+}
+
+.brand-mark:hover {
+  filter: drop-shadow(0 7px 16px rgba(34, 211, 238, 0.38));
+  transform: translateY(-1px);
+}
+
+.brand-node {
+  transform-origin: center;
+  animation: brand-node-pulse 2.4s ease-in-out infinite;
+}
+
+.brand-node-indigo { animation-delay: 0.45s; }
+.brand-node-emerald { animation-delay: 0.9s; }
+
+@keyframes brand-node-pulse {
+  0%, 100% { opacity: 0.7; transform: scale(0.82); }
+  50% { opacity: 1; transform: scale(1.12); }
+}
+
+.brand-as { color: #67e8f9; }
+.brand-divider { color: #64748b; }
+.brand-systems { color: #a5b4fc; }
+
 .corner-frame::before {
   top: -1px;
   left: -1px;
@@ -339,6 +378,10 @@ input:focus, textarea:focus {
 .light .gradient-text {
   background-image: linear-gradient(115deg, #087c95 0%, #0369a1 45%, #4338ca 100%);
 }
+
+.light .brand-as { color: #087c95; }
+.light .brand-divider { color: #526b82; }
+.light .brand-systems { color: #4338ca; }
 
 .light .role-signal {
   color: #1d4ed8;

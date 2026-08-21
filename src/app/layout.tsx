@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import CopyDeterrent from "@/components/CopyDeterrent";
 
 export const metadata: Metadata = {
   title: "Anubhav Snehi | Lead Engineer",
@@ -37,7 +38,8 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <body className="noise-bg grid-bg">
         <div className="global-signal-field" aria-hidden="true" />
-        {children}
+        <CopyDeterrent />
+        <div className="content-protection">{children}</div>
       </body>
     </html>
   );

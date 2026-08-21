@@ -3,7 +3,7 @@
 import { useEffect, useState, useMemo } from "react";
 import { motion } from "framer-motion";
 import { HiOutlineDownload, HiOutlineLocationMarker, HiOutlineMail } from "react-icons/hi";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn, FaWhatsapp } from "react-icons/fa";
 import { HiArrowDown } from "react-icons/hi";
 import {
   SiApachekafka,
@@ -441,6 +441,12 @@ export default function Hero() {
                   href: "mailto:snehinishu@gmail.com",
                   label: "Email",
                   color: "#818cf8",
+                },
+                {
+                  icon: <FaWhatsapp size={18} />,
+                  href: "https://wa.me/916207665579?text=Hi%20Anubhav%2C%20I%20came%20across%20your%20portfolio%20and%20would%20like%20to%20connect%20one-on-one.",
+                  label: "Connect 1:1",
+                  color: "#25d366",
                 },
               ].map((social) => (
                 <a

@@ -27,10 +27,7 @@ export default function Footer() {
           {/* Logo & copyright */}
           <div className="text-center md:text-left">
             <div className="flex items-center gap-2 justify-center md:justify-start mb-2">
-              <PortfolioLogo compact />
-              <span className="font-mono text-sm font-bold tracking-[0.08em]">
-                <span className="text-cyan">ANUBHAV</span><span className="text-slate-500">.DEV</span>
-              </span>
+              <PortfolioLogo />
             </div>
             <p className="text-gray-600 text-xs flex items-center gap-1.5 justify-center md:justify-start">
               &copy; {currentYear} — Built with{" "}
