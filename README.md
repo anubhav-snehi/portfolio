@@ -1,118 +1,77 @@
-# Anubhav Snehi — Portfolio
+# AS//SYSTEMS
 
-A modern, animated portfolio website built with **Next.js 14**, **Tailwind CSS**, **Framer Motion**, and **TypeScript**.
+Personal portfolio for **Anubhav Snehi**, Lead Engineer. The site presents distributed data-platform work through an interactive systems-console interface.
 
-View:- [portfolio](https://anubhav-snehi-portfolio.vercel.app)
+**Live site:** [portfolio](https://anubhav-snehi-portfolio.vercel.app)
 
-## Features
+## Highlights
 
-- Dark glassmorphism design with DodgerBlue accent
-- Smooth scroll-triggered animations (Framer Motion)
-- Typewriter hero animation with role rotation
-- Interactive experience timeline with expand/collapse
-- Responsive design — mobile-first
-- SEO-optimized with Open Graph metadata
-- Floating particle background effects
-- Contact form with mailto integration
-- Animated skill cards and stat counters
+- Original **AS//SYSTEMS** circuit monogram and responsive technical identity
+- Dark-first theme with a dedicated high-contrast daylight mode
+- Interactive `INGEST → STREAM → COMPUTE → SERVE` architecture telemetry, on desktop and mobile
+- Auto-rotating technology rail covering data, backend, cloud, and frontend platforms
+- Project-specific local SVG system snapshots with lazy-loaded `next/image` rendering
+- Resume download and direct WhatsApp `Connect 1:1` action
+- Animated career timeline, technology matrix, project cards, certifications, and contact workflow
+- Responsive layout tested for desktop and mobile widths
+- Browser security headers and casual copy deterrence for public content
 
-## Tech Stack
+## Stack
 
-| Layer       | Tech                                  |
-| ----------- | ------------------------------------- |
-| Framework   | Next.js 14 (App Router)               |
-| Language    | TypeScript                            |
-| Styling     | Tailwind CSS 3                        |
-| Animations  | Framer Motion                         |
-| Icons       | React Icons (FontAwesome, Heroicons)  |
-| Scroll      | react-intersection-observer           |
+| Layer | Technology |
+| --- | --- |
+| Framework | Next.js 14, App Router |
+| Language | TypeScript, React 18 |
+| Styling | Tailwind CSS 3, custom CSS design tokens |
+| Animation | Framer Motion, CSS keyframes |
+| Icons | React Icons |
+| Visibility | `react-intersection-observer` |
 
-## Getting Started
-
-### 1. Install dependencies
+## Run Locally
 
 ```bash
-cd portfolio
-npm install
-```
-
-> **Note:** If you're behind a corporate proxy/VPN, you may need to configure your npm registry:
-> ```bash
-> # Temporarily use public registry
-> npm install --registry https://registry.npmjs.org
-> ```
-
-### 2. Run the development server
-
-```bash
+npm install --registry=https://registry.npmjs.org
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000).
 
-### 3. Build for production
+For a production verification run:
 
 ```bash
+npx tsc --noEmit
 npm run build
-npm start
 ```
 
-## Deployment
+Do not copy `node_modules` or `.next` between machines. They are generated locally and ignored by Git.
 
-### Vercel (Recommended)
+## Deploy
 
-1. Push the code to a GitHub repository
-2. Go to [vercel.com](https://vercel.com) and import the repository
-3. Deploy — Vercel auto-detects Next.js and handles everything
+Vercel is the recommended deployment target.
 
-### Netlify
-
-1. Build: `npm run build`
-2. Deploy the `.next` directory or use Netlify's Next.js plugin
-
-### GitHub Pages (Static Export)
-
-Add to `next.config.mjs`:
-```js
-const nextConfig = { output: 'export' };
-```
-
-Then:
-```bash
-npm run build
-# Deploy the `out/` directory
-```
+1. Push the personal GitHub repository branch connected to Vercel.
+2. Vercel installs dependencies from `package-lock.json` and builds the Next.js app automatically.
+3. Add any future secrets only through Vercel environment variables, never in source files.
 
 ## Project Structure
 
-```
-portfolio/
-├── src/
-│   ├── app/
-│   │   ├── layout.tsx        # Root layout with metadata
-│   │   ├── page.tsx          # Main page composing all sections
-│   │   └── globals.css       # Global styles, animations, utilities
-│   └── components/
-│       ├── AnimatedSection.tsx   # Reusable scroll-triggered wrapper
-│       ├── Navbar.tsx            # Sticky nav with active section tracking
-│       ├── Hero.tsx              # Full-screen hero with typing animation
-│       ├── About.tsx             # Summary, stats, highlight cards
-│       ├── Experience.tsx        # Timeline with expandable cards
-│       ├── Skills.tsx            # Categorized skill grid
-│       ├── Projects.tsx          # Project showcase cards
-│       ├── Education.tsx         # Education + Certifications
-│       ├── Contact.tsx           # Contact form + info cards
-│       └── Footer.tsx            # Footer with social links
-├── package.json
-├── tailwind.config.ts
-├── tsconfig.json
-├── next.config.mjs
-└── postcss.config.mjs
+```text
+src/
+├── app/
+│   ├── globals.css          # Themes, design tokens, animation, security UX styles
+│   ├── layout.tsx           # Metadata and application shell
+│   └── page.tsx             # Section composition
+└── components/
+	├── Hero.tsx             # Interactive telemetry, stack rail, actions
+	├── PortfolioLogo.tsx    # AS//SYSTEMS brand mark
+	├── Projects.tsx         # Project snapshots and case-study cards
+	└── ...                  # About, Experience, Skills, Education, Contact, Footer
+
+public/
+├── project-visuals/         # Original local SVG project visuals
+└── resume/Anubhav_Resume.pdf
 ```
 
-## Customization
+## Notes
 
-- **Colors:** Edit `tailwind.config.ts` → `theme.extend.colors.accent`
-- **Content:** Edit individual component files in `src/components/`
-- **Fonts:** Change the Google Fonts import in `globals.css`
-- **Animations:** Modify keyframes in `tailwind.config.ts` or `globals.css`
+The site disables ordinary text selection, context menus, and dragging as a casual copy deterrent. This does not prevent a determined visitor from inspecting public browser code, which is not technically possible for any public website.
